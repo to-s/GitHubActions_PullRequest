@@ -1,0 +1,13 @@
+name: Workflow
+
+on: [pull_request]
+
+jobs:
+  EventJSON:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: workflow/event.json
+      run: cat workflow/event.json
