@@ -13,12 +13,12 @@ jobs:
       run: ls -Ral
     - name: $GITHUB_EVENT_PATH
       run: cat $GITHUB_EVENT_PATH
-    - name: From
-      run: echo ${{ github.base_ref }}
     - name: To
+      run: echo ${{ github.base_ref }}
+    - name: From
       run: echo ${{ github.head_ref }}     
     - name: Diff
-      run: git diff origin/${{ github.head_ref }} > diff.txt
+      run: git diff origin/${{ github.base_ref }} > diff.txt
     - name: Cat
       run: cat diff.txt
     - name: ls -Ral
