@@ -14,6 +14,8 @@ jobs:
     - name: $GITHUB_EVENT_PATH
       run: cat $GITHUB_EVENT_PATH
     - name: From
-      run: echo "$(jq '.pull_request.base.refid' $GITHUB_EVENT_PATH)"
+      run: echo ${{ github.base_ref }}
     - name: To
-      run: echo "$(jq '.pull_request.head.refid' $GITHUB_EVENT_PATH)"      
+      run: echo ${{ github.head_ref }}     
+    - name: Diff
+      run: git diff origin/${{ github.head_ref }}
