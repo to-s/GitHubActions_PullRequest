@@ -21,3 +21,5 @@ jobs:
       run: git diff origin/${{ github.head_ref }} > diff.txt
     - name: Cat
       run: cat diff.txt
+    - name: ls -Ral
+      run: ls -Ral      
