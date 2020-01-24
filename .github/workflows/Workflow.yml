@@ -9,5 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name ls -Ral
+      run: name ls -Ral
     - name: workflow/event.json
       run: cat workflow/event.json
