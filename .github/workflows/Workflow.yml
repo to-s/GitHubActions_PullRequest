@@ -18,4 +18,6 @@ jobs:
     - name: To
       run: echo ${{ github.head_ref }}     
     - name: Diff
-      run: git diff origin/${{ github.head_ref }}
+      run: git diff origin/${{ github.head_ref }} > diff.txt
+    - name: Cat
+      run: cat diff.txt
