@@ -13,3 +13,7 @@ jobs:
       run: ls -Ral
     - name: $GITHUB_EVENT_PATH
       run: cat $GITHUB_EVENT_PATH
+    - name: From
+      run: echo "$(jq '.pull_request.base.refid' $GITHUB_EVENT_PATH)"
+    - name: To
+      run: echo "$(jq '.pull_request.head.refid' $GITHUB_EVENT_PATH)"      
